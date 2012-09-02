@@ -1,4 +1,7 @@
 " PATHOGEN {{{1
+" read pathogen from its own bundle
+runtime bundle/pathogen/autoload/pathogen.vim
+
 " turn filetype on then off to fix small bug with git commit messages
 " http://tooky.github.com/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
 " if filetype is already off, then trying to turn it off again results in a bad
