@@ -49,3 +49,6 @@ vc="\$(~/.dotfiles/vcprompt -f '$txtrst on $txtylw%s:%b%m')"
 PS1="$txtblu\u$txtrst at$txtcyn \H$txtrst in $txtgrn\W$vc$txtrst "
 
 #vcprompt - https://github.com/djl/vcprompt
+
+# make vim my default editor for everything.
+export EDITOR="vim"
