@@ -107,6 +107,7 @@ set statusline+=%{&fileformat}]\    " file format
 set statusline+=%#Error#
 set statusline+=%{StatuslineTabWarning()}
 set statusline+=%{StatuslineTrailingWhitespaceWarning()}
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*  " reset colour
 
 set statusline+=%=  " right align everything else
