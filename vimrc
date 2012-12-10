@@ -1,4 +1,4 @@
-" PATHOGEN {{{1
+" pathogen {{{
 " read pathogen from its own bundle
 runtime bundle/pathogen/autoload/pathogen.vim
 
@@ -9,15 +9,14 @@ runtime bundle/pathogen/autoload/pathogen.vim
 filetype on
 filetype off
 call pathogen#infect()
-" }}}1
 
-" TABS
+" tabs {{{1
 set tabstop=4       " Width of the <Tab> key
 set softtabstop=4   " Number of spaces if expandtab is set
 set shiftwidth=4    " Number of spaces used for autoindents. including '>>'
 set expandtab       " Expand tabs into spaces
 
-" BASIC SETTINGS {{{1
+" basic settings {{{1
 " Forget compatibility with Vi. Who cares?
 set nocompatible
 
@@ -26,16 +25,12 @@ let maplocalleader="\\"
 
 set relativenumber
 
-" Syntax / Colours
+" Syntax/Colours
 syntax on
 set background=dark
 set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
-
-" Typography
-"set guifont=M+\ 1m\ regular:h11,Monaco:h10
-"set linespace=0
 
 " Enable current line and column highlighting
 set cursorline
@@ -69,7 +64,6 @@ set wildmenu
 
 " Folding
 set foldenable
-set foldmethod=marker
 set foldcolumn=1
 
 " Hide mouse when typing
@@ -87,10 +81,9 @@ set splitright
 set timeoutlen=500
 
 " Offset cursor position by 8 lines form edge when scrolling
-set scrolloff=8
-" }}}1
+set scrolloff=5
 
-" STATUS LINE {{{
+" status line {{{
 set showcmd         " show incomplete command in status line
 set laststatus=2    " Always display the status bar
 
@@ -156,7 +149,7 @@ endfunction
 
 " }}}
 
-" TEXT FORMATTING {{{1
+" text formatting {{{1
 set wrap        " Better line wrapping
 set textwidth=80
 set formatoptions=cqrn1
@@ -167,17 +160,15 @@ set formatoptions=cqrn1
 " 1     Break a line after a one letter word, not before it
 set linebreak   " don't break words when wrapping text
 set showbreak=… " begin wrapped lines with an ellipses
-" }}}1
 
-" SPELLING {{{1
+" spelling {{{1
 " Enable spell checking for British English
 set spell
 set spelllang=en_gb
 " Clean up spell file with:
 " :runtime spell/cleanadd.vim
-" }}}1
 
-" ABBREVIATIONS / MAPPINGS {{{1
+" abbreviations/mappings {{{1
 " Make the current word uppercase
 inoremap <c-u> <esc>viwUea
 
@@ -197,16 +188,7 @@ nnoremap <leader>md :%! /usr/local/bin/Markdown.pl --html4tags <cr>
 " directory, recursively
 " nnoremap <leader>g :silent execute "grep! -R " . shellescape("<cWORD>") . " ."<cr>:copen 5<cr>
 
-" Code hints pop-up
-"set completeopt=longest,menuone
-"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  "\ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  "\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-" }}}1
-
-" MOVEMENT {{{1
+" movement {{{1
 " Arrow keys are for the weak!
 inoremap <UP> <NOP>
 inoremap <DOWN> <NOP>
@@ -216,9 +198,8 @@ noremap <UP> <NOP>
 noremap <DOWN> <NOP>
 noremap <LEFT> <NOP>
 noremap <RIGHT> <NOP>
-" }}}1
 
-" BACKUPS {{{1
+" backups {{{1
 set backup " enable backup
 set backupdir=~/.vim/tmp/backup
 set directory=~/.vim/tmp/swap
@@ -228,9 +209,8 @@ set directory=~/.vim/tmp/swap
 " persistent undo history
 "set undofile
 "set undodir=.vim-undo/
-"}}}1
 
-" COMMANDS / FUNCTIONS {{{1
+" commands/functions {{{1
 " Automatically change current directory to that of the file in the buffer
 "autocm BufEnter * cd %:p:h
 
@@ -278,9 +258,8 @@ function! s:QuickFixToggle()
         let g:quickfix_is_open=1
     endif
 endfunction
-" }}}1
 
-" FILE-SPECIFIC SETTINGS {{{1
+" file-specific settings {{{1
 " custom status line for markdown files
 augroup filetype_md
     autocmd!
@@ -295,4 +274,6 @@ augroup html_textwidth
     autocmd!
     autocmd FileType html setlocal textwidth=0
 augroup END
-" }}}1
+
+" plugin settings {{{1
+map <F2> :NERDTreeToggle<CR>
