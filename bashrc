@@ -45,8 +45,16 @@ txtrst="\033[0m"    # Text Reset
 # }}}
 
 # Prompt Configuration
+
+env_vim=`env | grep vim`;
+if echo "$env_vim" | grep -q "MYVIMRC"; then
+    vim_prompt="$txtrst using$txtred vim";
+else
+    vim_prompt="";
+fi
+
 vc="\$(~/.dotfiles/vcprompt -f '$txtrst on $txtylw%s:%b%m')"
-PS1="$txtblu\u$txtrst at$txtcyn \H$txtrst in $txtgrn\W$vc$txtrst "
+PS1="$txtblu\u$txtrst at$txtcyn \H$txtrst in $txtgrn\W$vc$vim_prompt$txtrst "
 
 #vcprompt - https://github.com/djl/vcprompt
 
