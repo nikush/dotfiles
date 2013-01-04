@@ -274,6 +274,3 @@ augroup html_textwidth
     autocmd!
     autocmd FileType html setlocal textwidth=0
 augroup END
-
-" plugin settings {{{1
-map <F2> :NERDTreeToggle<CR>
