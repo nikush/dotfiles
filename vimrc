@@ -1,111 +1,93 @@
-" pathogen {{{
-" read pathogen from its own bundle
 runtime bundle/pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
-" turn filetype on then off to fix small bug with git commit messages
-" http://tooky.github.com/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
-" if filetype is already off, then trying to turn it off again results in a bad
-" exit status, so I turn it on then off to resole this.
-filetype on
-filetype off
-call pathogen#infect()
-
-" tabs {{{1
-set tabstop=4       " Width of the <Tab> key
-set softtabstop=4   " Number of spaces if expandtab is set
-set shiftwidth=4    " Number of spaces used for autoindents. including '>>'
-set expandtab       " Expand tabs into spaces
-
-" basic settings {{{1
-" Forget compatibility with Vi. Who cares?
 set nocompatible
+filetype plugin indent on
 
 let mapleader=","
 let maplocalleader="\\"
 
-set relativenumber
-
-" Syntax/Colours
 syntax on
 set background=dark
 set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
 
-" Enable current line and column highlighting
+set relativenumber
 set cursorline
 set cursorcolumn
-set colorcolumn=+1  " Display column to align text
+set colorcolumn=+1
 
-" Indenting
-set smartindent
-set autoindent
-
-" Enable file types
-filetype on
-filetype plugin on
-filetype indent on
-
-" Read in new file if it has been updated outside of Vim
-set autoread
-" Switch between buffers without saving
-set hidden
-
-set hlsearch        " highlight search results
-set incsearch       " Incremental searching
-set cpoptions+=$    " Add '$' to indicate the end of a change until command
-
-" When a bracket is typed, jump to the matching one for a quick second
-set showmatch
-
-" Wild menu
+set showcmd
+set laststatus=2
 set wildmode=full
 set wildmenu
 
-" Folding
+set smartindent
+set autoindent
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set textwidth=80
+set wrap
+set formatoptions=cqrnj
+set showbreak=…
+set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
+
+set autoread
+set hidden
+
+set hlsearch
+set incsearch
+set cpoptions+=$
+set showmatch
+
 set foldenable
 set foldcolumn=1
 
-" Hide mouse when typing
-set mousehide
+set scrolloff=3
 
-" Set invisible characters
-set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
+set spell
+set spelllang=en_gb
 
-" Window splitting
-set splitbelow
-set splitright
+set directory=~/.cache/vim/swap//
+set backup
+set backupdir=~/.cache/vim/backup//
+set undofile
+set undodir=~/.cache/vim/undo//
 
-" Set time-out length for how long to wait before command is executed
-" because Vim waits to see if another key is going to be pressed
-set timeoutlen=500
-
-" Offset cursor position by 8 lines form edge when scrolling
-set scrolloff=5
+" Arrow keys are for the weak!
+inoremap <UP> <NOP>
+inoremap <DOWN> <NOP>
+inoremap <LEFT> <NOP>
+inoremap <RIGHT> <NOP>
+noremap <UP> <NOP>
+noremap <DOWN> <NOP>
+noremap <LEFT> <NOP>
+noremap <RIGHT> <NOP>
 
 " status line {{{
-set showcmd         " show incomplete command in status line
-set laststatus=2    " Always display the status bar
-
-" format the status line
-set statusline=     " clear the status line
-set statusline+=%<  " truncate at start
-set statusline+=%f\     " path to file
-set statusline+=%h%m%r  " help, modified, read only flags
-set statusline+=%y    " file type
+set statusline=        " clear the status line
+set statusline+=%<     " truncate at start
+set statusline+=%f\    " path to file
+set statusline+=%h%m%r " help, modified, read only flags
+set statusline+=%y     " file type
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}, " encoding
 set statusline+=%{&fileformat}]\    " file format
 
-" display a warning if the file is using mixed indenting
+" warnings
 set statusline+=%#Error#
 set statusline+=%{StatuslineTabWarning()}
 set statusline+=%{StatuslineTrailingWhitespaceWarning()}
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*  " reset colour
 
-set statusline+=%=  " right align everything else
+set statusline+=%=      " right align everything else
 set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
-set statusline+=%-.12(L:%l,C:%c%V%) " line, columns
+set statusline+=%-.12(L:%l,C:%c%V%) " line, column
 set statusline+=\ %P    " percent through file
 
 " http://got-ravings.blogspot.co.uk/2008/10/vim-pr0n-statusline-whitespace-flags.html
@@ -115,10 +97,10 @@ autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 " recalculate the trailing whitespace warning when idle, and after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 
-"return '[&expandtab]' if &et is set wrong (indenting with tabs when you should
-"  be using spaces, and vice versa)
-"return '[mixed-indenting]' if spaces and tabs are used to indent
-"return an empty string if everything is fine
+" return '[&expandtab]' if &et is set wrong (indenting with tabs when you should
+" be using spaces, and vice versa)
+" return '[mixed-indenting]' if spaces and tabs are used to indent
+" return an empty string if everything is fine
 function! StatuslineTabWarning()
     if !exists("b:statusline_tab_warning")
         let tabs = search('^\t', 'nw') != 0
@@ -146,71 +128,7 @@ function! StatuslineTrailingWhitespaceWarning()
     endif
     return b:statusline_trailing_space_warning
 endfunction
-
 " }}}
-
-" text formatting {{{1
-set wrap        " Better line wrapping
-set textwidth=80
-set formatoptions=cqrn1
-" c     Autowrap comments using text width
-" q     Allow of comments with `gq`
-" r     Add comment leader after hitting `<Enter>`
-" n     Recognise numbered lists, doesn't seem to work though :(
-" 1     Break a line after a one letter word, not before it
-set linebreak   " don't break words when wrapping text
-set showbreak=… " begin wrapped lines with an ellipses
-
-" spelling {{{1
-" Enable spell checking for British English
-set spell
-set spelllang=en_gb
-" Clean up spell file with:
-" :runtime spell/cleanadd.vim
-
-" abbreviations/mappings {{{1
-" Make the current word uppercase
-inoremap <c-u> <esc>viwUea
-
-" Use tab to indent and unindent lines in visual mode
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-
-iabbrev @@ nik@nikush.co.uk
-iabbrev ccopy "Copyright" 2012 Nikush Patel
-iabbrev ssig --<cr>Nikush Patel<cr>nik@nikush.co.uk
-
-"Markdown to HTML
-vnoremap <leader>md :! /usr/local/bin/Markdown.pl --html4tags <cr>
-nnoremap <leader>md :%! /usr/local/bin/Markdown.pl --html4tags <cr>
-
-" search for the word under the cursor in every file within the current
-" directory, recursively
-" nnoremap <leader>g :silent execute "grep! -R " . shellescape("<cWORD>") . " ."<cr>:copen 5<cr>
-
-" movement {{{1
-" Arrow keys are for the weak!
-inoremap <UP> <NOP>
-inoremap <DOWN> <NOP>
-inoremap <LEFT> <NOP>
-inoremap <RIGHT> <NOP>
-noremap <UP> <NOP>
-noremap <DOWN> <NOP>
-noremap <LEFT> <NOP>
-noremap <RIGHT> <NOP>
-
-" backups {{{1
-set directory=~/.cache/vim/swap//
-set backup
-set backupdir=~/.cache/vim/backup//
-set undofile
-set undodir=~/.cache/vim/undo//
-
-" My version of strip trailing white
-nnoremap <leader>w :call TrailingSpaces()<cr>
-function! TrailingSpaces()
-    execute "normal! /\\v\\s+$"."\<cr>"
-endfunction
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -221,48 +139,12 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" Call StripTrailingWhitespaces when file is saved
-"autocmd BufWritePre *.html,*.css,*.js,*.php :call <SID>StripTrailingWhitespaces()
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
-"nnoremap <c-q> :call <SID>QuickFixToggle()<cr>
-
-let g:quickfix_is_open=0
-
-function! s:QuickFixToggle()
-    if g:quickfix_is_open
-        cclose
-        let g:quickfix_is_open=0
-        execute g:quickfix_return_to_window . "wincmd w"
-    else
-        let g:quickfix_return_to_window = winnr();
-        copen
-        let g:quickfix_is_open=1
-    endif
-endfunction
-
-" file-specific settings {{{1
-" custom status line for markdown files
 augroup filetype_md
     autocmd!
-    "autocmd FileType markdown setlocal statusline=%f%=%l/%L
-    autocmd FileType markdown setlocal tabstop=2
-    autocmd FileType markdown setlocal softtabstop=2
-    autocmd FileType markdown setlocal shiftwidth=2
+    autocmd FileType markdown setlocal ts=2 sts=2 sw=2
 augroup END
 
-" html files shouldn't have a text width
-augroup html_textwidth
+augroup filetype_html
     autocmd!
     autocmd FileType html setlocal textwidth=0
 augroup END
