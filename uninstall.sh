@@ -33,4 +33,7 @@ if [ -e ~/.bashrc ]; then
     fi
 fi
 
+# remove the cache used with this setup
+rm -r ~/.cache/vim
+
 printf "\e[32m%s\e[0m\n" "Uninstallation complete!"

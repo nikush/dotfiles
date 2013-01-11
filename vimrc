@@ -200,19 +200,11 @@ noremap <LEFT> <NOP>
 noremap <RIGHT> <NOP>
 
 " backups {{{1
-set backup " enable backup
-set backupdir=~/.vim/tmp/backup
-set directory=~/.vim/tmp/swap
-
-" Undo persistence
-" Create a `.vim-undo/` directory in the project folder to start using
-" persistent undo history
-"set undofile
-"set undodir=.vim-undo/
-
-" commands/functions {{{1
-" Automatically change current directory to that of the file in the buffer
-"autocm BufEnter * cd %:p:h
+set directory=~/.cache/vim/swap//
+set backup
+set backupdir=~/.cache/vim/backup//
+set undofile
+set undodir=~/.cache/vim/undo//
 
 " My version of strip trailing white
 nnoremap <leader>w :call TrailingSpaces()<cr>

@@ -34,4 +34,7 @@ if [ -n "$response" ] && [ $response = "y" ]; then
     git submodule update --init
 fi
 
+# create vim cache
+mkdir -p ~/.cache/vim/{swap,backup,undo}
+
 printf "\e[32m%s\e[0m\n" "Installation complete!"
