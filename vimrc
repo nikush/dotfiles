@@ -70,7 +70,7 @@ set foldcolumn=1
 set mousehide
 
 " Set invisible characters
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
 
 " Window splitting
 set splitbelow
