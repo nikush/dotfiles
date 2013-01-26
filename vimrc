@@ -33,7 +33,7 @@ set expandtab
 
 set textwidth=80
 set wrap
-set formatoptions=cqrnj
+set formatoptions=cqrn
 set showbreak=…
 set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
 
