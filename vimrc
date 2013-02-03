@@ -148,3 +148,8 @@ augroup filetype_html
     autocmd!
     autocmd FileType html setlocal textwidth=0
 augroup END
+
+" php syntax settings
+let php_sql_query=1
+let php_htmlInStrings=1
+let php_folding=1
