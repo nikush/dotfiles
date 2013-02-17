@@ -8,3 +8,11 @@
     eol = lf
     safecrlf = true
     editor = vim -f
+[alias]
+    co = checkout
+    ds = diff --staged
+    sb = status -sb
+    amend = commit --amend -C HEAD
+    undo = reset --soft HEAD^
+    standup = log --since '1 day ago' --oneline --author nikush.patel7@gmail.com
+    graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
