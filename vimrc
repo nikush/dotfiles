@@ -138,18 +138,3 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-augroup filetype_md
-    autocmd!
-    autocmd FileType markdown setlocal ts=2 sts=2 sw=2
-augroup END
-
-augroup filetype_html
-    autocmd!
-    autocmd FileType html setlocal textwidth=0
-augroup END
-
-" php syntax settings
-let php_sql_query=1
-let php_htmlInStrings=1
-let php_folding=1
