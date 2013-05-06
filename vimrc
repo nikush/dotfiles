@@ -10,13 +10,13 @@ let maplocalleader="\\"
 syntax on
 set background=dark
 set t_Co=16
-let g:solarized_termcolors=16
-colorscheme solarized
+"let g:solarized_termcolors=16
+"colorscheme default
 
 set relativenumber
-set cursorline
-set cursorcolumn
-set colorcolumn=+1
+"set cursorline
+"set cursorcolumn
+"set colorcolumn=+1
 
 set showcmd
 set laststatus=2
@@ -35,6 +35,7 @@ set textwidth=80
 set wrap
 set formatoptions=cqrn
 set showbreak=…
+set list
 set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
 
 set autoread
