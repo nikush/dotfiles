@@ -48,13 +48,16 @@ txtrst="\033[0m"    # Text Reset
 
 env_vim=`env | grep vim`;
 if echo "$env_vim" | grep -q "MYVIMRC"; then
-    vim_prompt="$txtrst using$txtred vim";
+    # vim_prompt="$txtrst using$txtred vim";
+    vim_prompt=" v";
 else
     vim_prompt="";
 fi
 
-vc="\$(~/.dotfiles/vcprompt -f '$txtrst on $txtylw%s:%b%m')"
-PS1="$txtblu\u$txtrst at$txtcyn \H$txtrst in $txtgrn\W$vc$vim_prompt$txtrst "
+# vc="\$(~/.dotfiles/vcprompt -f '$txtrst on $txtylw%s:%b%m')"
+vc="\$(~/.dotfiles/vcprompt -f ' %s:%b%m')"
+# PS1="$txtblu\u$txtrst at$txtcyn \H$txtrst in $txtgrn\W$vc$vim_prompt$txtrst "
+PS1="[\W]$vim_prompt $ "
 
 #vcprompt - https://github.com/djl/vcprompt
 
