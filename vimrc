@@ -148,3 +148,9 @@ let g:syntastic_check_on_open=1
 let g:syntastic_mode_map = { 'mode': 'passive',
                             \ 'active_filetypes': [],
                             \ 'passive_filetypes': [] }
+
+nnoremap <leader>- :Switch<cr>
+let g:switch_custom_definitions =
+            \ [
+            \   ['private', 'protected', 'public']
+            \ ]
