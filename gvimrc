@@ -1,5 +1,5 @@
 " Use an awesome colorscheme that supports hex values
-colorscheme impact
+colorscheme badwolf
 
 " Fonts
 set guifont=Ubuntu\ Mono\ 12
