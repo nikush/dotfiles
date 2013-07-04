@@ -47,11 +47,10 @@ txtrst="\033[0m"    # Text Reset
 # Prompt Configuration
 
 env_vim=`env | grep vim`;
-if echo "$env_vim" | grep -q "MYVIMRC"; then
-    # vim_prompt="$txtrst using$txtred vim";
-    vim_prompt=" v";
+if [[ "$env_vim" == *MYVIMRC* ]]; then
+    vim_prompt="v";
 else
-    vim_prompt="";
+    vim_prompt="$";
 fi
 
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -59,7 +58,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=true
-PROMPT_COMMAND='__git_ps1 "[\W]" "$vim_prompt \\\$ "'
+PROMPT_COMMAND='__git_ps1 "[\W]" " $vim_prompt "'
 
 # make vim my default editor for everything.
 export EDITOR="vim"
