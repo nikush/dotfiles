@@ -54,12 +54,12 @@ else
     vim_prompt="";
 fi
 
-# vc="\$(~/.dotfiles/vcprompt -f '$txtrst on $txtylw%s:%b%m')"
-vc="\$(~/.dotfiles/vcprompt -f ' %s:%b%m')"
-# PS1="$txtblu\u$txtrst at$txtcyn \H$txtrst in $txtgrn\W$vc$vim_prompt$txtrst "
-PS1="[\W]$vim_prompt $ "
-
-#vcprompt - https://github.com/djl/vcprompt
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=true
+PROMPT_COMMAND='__git_ps1 "[\W]" "$vim_prompt \\\$ "'
 
 # make vim my default editor for everything.
 export EDITOR="vim"
