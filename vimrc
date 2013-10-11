@@ -41,7 +41,6 @@ set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
 set autoread
 set hidden
 
-set hlsearch
 set incsearch
 set cpoptions+=$
 set showmatch
