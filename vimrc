@@ -59,6 +59,10 @@ set backupdir=~/.cache/vim/backup//
 set undofile
 set undodir=~/.cache/vim/undo//
 
+" Get to ex commands quicker
+nnoremap ; :
+nnoremap : ;
+
 " Arrow keys are for the weak!
 inoremap <UP> <NOP>
 inoremap <DOWN> <NOP>
