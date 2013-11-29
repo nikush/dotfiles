@@ -14,10 +14,12 @@
     sb = status -sb
     amend = commit --amend -C HEAD
     undo = reset --soft HEAD^
-    standup = log --since '1 day ago' --oneline --author nikush.patel7@gmail.com
-    graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-    lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    standup = log --since='yesterday' --oneline --author=nikush.patel7@gmail.com
+    graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(red) %an%Creset, %ar'
+    lg = log --pretty=format:'%Cred%h %Creset%s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    la = "!git config -l | grep alias | cut -c 7-"
 [push]
     default = current
 
 # aliases (http://code.joejag.com/2013/everyday-git-aliases/)
+# durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
