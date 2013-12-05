@@ -13,7 +13,11 @@ set t_Co=16
 "let g:solarized_termcolors=16
 "colorscheme default
 
-set relativenumber
+if exists('+relativenumber')
+    set relativenumber
+else
+    set number
+endif
 "set cursorline
 "set cursorcolumn
 "set colorcolumn=+1
@@ -56,8 +60,10 @@ set spelllang=en_gb
 set directory=~/.cache/vim/swap//
 set backup
 set backupdir=~/.cache/vim/backup//
-set undofile
-set undodir=~/.cache/vim/undo//
+if exists('+undofile')
+    set undofile
+    set undodir=~/.cache/vim/undo//
+endif
 
 " Get to ex commands quicker
 nnoremap ; :
