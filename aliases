@@ -1,0 +1,10 @@
+# vim: ft=sh
+
+# Unix
+alias ln='ln -v'
+alias l='ls'
+alias ll='ls -al'
+alias lh='ls -Alh'
+
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
