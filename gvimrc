@@ -8,3 +8,8 @@ set guifont=Ubuntu\ Mono\ 12
 set guioptions-=T   " remove toolbar
 set guioptions-=L   " remove left hand scrollbar
 set guioptions-=r   " remove right hand scrollbar
+
+" Local config
+if filereadable($HOME . "/.gvimrc.local")
+    source ~/.gvimrc.local
+endif

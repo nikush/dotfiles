@@ -2,6 +2,7 @@
 
 # make vim my default editor for everything.
 export EDITOR="vim"
+export VISUAL="vim"
 
 
 # Prompt Configuration
@@ -27,3 +28,9 @@ if [ $? -eq 0 ]; then
 else
     export PS1='[\W] $vim_prompt '
 fi
+
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+# Local config
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local

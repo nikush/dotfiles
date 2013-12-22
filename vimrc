@@ -170,3 +170,9 @@ vmap <expr> <RIGHT> DVB_Drag('right')
 vmap <expr> <DOWN> DVB_Drag('down')
 vmap <expr> <UP> DVB_Drag('up')
 vmap <expr> D DVB_Duplicate()
+
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+    source ~/.vimrc.local
+endif
