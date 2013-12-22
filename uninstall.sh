@@ -15,6 +15,16 @@ else
     printf "%s\n" ".vimrc doesn't exist. Skipped."
 fi
 
+if [ -e ~/.gvimrc ]; then
+    if [ -L ~/.gvimrc ]; then
+        rm ~/.gvimrc
+    else
+        printf "%s\n" ".gvimrc is not a symlink. Skipped."
+    fi
+else
+    printf "%s\n" ".gvimrc doesn't exist. Skipped."
+fi
+
 if [ -e ~/.vim ]; then
     if [ -L ~/.vim ]; then
         rm ~/.vim
@@ -33,7 +43,27 @@ if [ -e ~/.bashrc ]; then
     fi
 fi
 
+if [ -e ~/.aliases ]; then
+    if [ -L ~/.aliases ]; then
+        rm ~/.aliases
+    else
+        printf "%s\n" ".aliases is not a symlink. Skipped."
+    fi
+else
+    printf "%s\n" ".aliases doesn't exist. Skipped."
+fi
+
+if [ -e ~/.gitconfig ]; then
+    if [ -L ~/.gitconfig ]; then
+        rm ~/.gitconfig
+    else
+        printf "%s\n" ".gitconfig is not a symlink. Skipped."
+    fi
+else
+    printf "%s\n" ".gitconfig doesn't exist. Skipped."
+fi
+
 # remove the cache used with this setup
-rm -r ~/.cache/vim
+rm -rf ~/.cache/vim
 
 printf "\e[32m%s\e[0m\n" "Uninstallation complete!"

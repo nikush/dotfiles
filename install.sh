@@ -11,6 +11,12 @@ else
     printf "\e[1m%s\e[0m %s\n" ".vimrc" "file already present. Skipped."
 fi
 
+if [ ! -e ~/.gvimrc ]; then
+    ln -s ~/.dotfiles/gvimrc ~/.gvimrc
+else
+    printf "\e[1m%s\e[0m %s\n" ".gvimrc" "file already present. Skipped."
+fi
+
 if [ ! -e ~/.vim ]; then
     ln -s ~/.dotfiles/vim ~/.vim
 else
@@ -26,6 +32,18 @@ if [ -e ~/.bashrc ]; then
     fi
 else
     ln -s ~/.dotfiles/bashrc ~/.bashrc
+fi
+
+if [ ! -e ~/.aliases ]; then
+    ln -s ~/.dotfiles/aliases ~/.aliases
+else
+    printf "\e[1m%s\e[0m %s\n" ".aliases" "file already present. Skipped."
+fi
+
+if [ ! -e ~/.gitconfig ]; then
+    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+else
+    printf "\e[1m%s\e[0m %s\n" ".gitconfig" "file already present. Skipped."
 fi
 
 printf "%s" "Initialise vim plugin submodules? (y/n) "
