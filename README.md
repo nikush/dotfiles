@@ -1,13 +1,19 @@
-My Dotfiles
-===========
+nikush's dotfiles
+=================
 
-My dotfiles are kept in ~/.dotfiles/ for better organisation and source code
-management.
+Install
+-------
+Run `dotfiles.sh install` to install all config files into to the home
+directory using symlinks.
 
-The following files and directories need to be aliased to the home folder in
-order to work:
+Uninstall
+---------
+Run `dotfiles.sh uninstall` to remove all of the symlinks.
 
-    - ln -s ~/.dotfiles/bashrc  ~/.bashrc
-    - ln -s ~/.dotfiles/vim/  ~/.vim/
-    - ln -s ~/.dotfiles/vimrc  ~/.vimrc
-    - ln -s ~/.dotfiles/gvimrc  ~/.gvimrc
+Local Settings
+--------------
+To add to or override any of the existing settings without directly editing the
+files in the repository, create a `*.local` file in your home directory and add
+your settings there.  For example, to add local setting to your `.bashrc` file,
+create a `.bashrc.local` file, the settings in the local file will be sourced
+after the `.bashrc` file.

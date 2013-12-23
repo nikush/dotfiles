@@ -1,3 +1,5 @@
+# vim: ft=gitconfig
+
 [user]
     name = Nikush Patel
     email = nikush.patel7@gmail.com
