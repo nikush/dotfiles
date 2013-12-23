@@ -43,6 +43,20 @@ function install_dotfiles {
         install_file $file
     done
 
+    # additional git scripts
+    if [ ! -e ~/.git-prompt.sh ]; then
+        ln -s /usr/lib/git-core/git-sh-prompt ~/.git-prompt.sh
+        printf "$format_file_bold" ".git-prompt.sh" "installed."
+    else
+        printf "$format_file_bold" ".git-prompt.sh" "already present. Skipped."
+    fi
+    if [ ! -e ~/.git-completion.sh ]; then
+        wget -q https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.sh
+        printf "$format_file_bold" ".git-completion.sh" "installed."
+    else
+        printf "$format_file_bold" ".git-completion.sh" "already present. Skipped."
+    fi
+
     echo "Initialising vim plugin submodules"
     git submodule update --init
 
@@ -56,6 +70,15 @@ function uninstall_dotfiles {
     for file in ${files[*]}; do
         uninstall_file $file
     done
+
+    # additional git scripts
+    uninstall_file git-prompt.sh
+    if [ -e ~/.git-completion.sh ]; then
+        rm ~/.git-completion.sh
+        printf "$format_file_bold" ".git-completion.sh" "uninstalled."
+    else
+        printf "$format_file_bold" ".git-completion.sh" "doesn't exist. Skipped."
+    fi
 
     # remove vim cache
     rm -rf ~/.cache/vim
