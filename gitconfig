@@ -1,8 +1,5 @@
 # vim: ft=gitconfig
 
-[user]
-    name = Nikush Patel
-    email = nikush.patel7@gmail.com
 [color]
     ui = true
 [core]
@@ -11,15 +8,16 @@
     safecrlf = true
     editor = vim -f
 [alias]
+    st = status
     co = checkout
     ds = diff --staged
     sb = status -sb
+    lg = log --pretty=format:'%Cred%h %Creset%s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    la = "!git config -l | grep alias | cut -c 7-"
     amend = commit --amend -C HEAD
     undo = reset --soft HEAD^
     standup = log --since='yesterday' --oneline --author=nikush.patel7@gmail.com
     graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(red) %an%Creset, %ar'
-    lg = log --pretty=format:'%Cred%h %Creset%s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-    la = "!git config -l | grep alias | cut -c 7-"
 [push]
     default = current
 [include]

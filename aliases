@@ -2,8 +2,6 @@
 
 # Unix
 alias ln='ln -v'
-alias l='ls'
-alias ll='ls -al'
 alias lh='ls -Alh'
 
 # Include custom aliases
