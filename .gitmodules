@@ -51,4 +51,4 @@
 	url = https://github.com/AndrewRadev/switch.vim
 [submodule "vim/bundle/vim-twig"]
 	path = vim/bundle/vim-twig
-	url = git@github.com:evidens/vim-twig.git
+	url = https://github.com/evidens/vim-twig
