@@ -27,7 +27,7 @@ function install_file {
 function uninstall_file {
     local file=$1
     if [ -e ~/.$file ]; then
-        if [ -L ~/.$file ]; then
+        if [ -L ~/.$file ] || [ "$2" -eq "1" ]; then
             rm ~/.$file
             printf "$format_file_bold" ".$file" "uninstalled."
         else
@@ -45,7 +45,11 @@ function install_dotfiles {
 
     # additional git scripts
     if [ ! -e ~/.git-prompt.sh ]; then
-        ln -s /usr/lib/git-core/git-sh-prompt ~/.git-prompt.sh
+        if [ -e /usr/lib/git-core/git-sh-prompt ]; then
+            ln -s /usr/lib/git-core/git-sh-prompt ~/.git-prompt.sh
+        else
+            wget -q https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+        fi
         printf "$format_file_bold" ".git-prompt.sh" "installed."
     else
         printf "$format_file_bold" ".git-prompt.sh" "already present. Skipped."
@@ -72,13 +76,8 @@ function uninstall_dotfiles {
     done
 
     # additional git scripts
-    uninstall_file git-prompt.sh
-    if [ -e ~/.git-completion.sh ]; then
-        rm ~/.git-completion.sh
-        printf "$format_file_bold" ".git-completion.sh" "uninstalled."
-    else
-        printf "$format_file_bold" ".git-completion.sh" "doesn't exist. Skipped."
-    fi
+    uninstall_file git-completion.sh 1
+    uninstall_file git-prompt.sh 1
 
     # remove vim cache
     rm -rf ~/.cache/vim
