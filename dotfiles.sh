@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # dotfiles install/uninstall script
 
 # list of files to work with
@@ -14,6 +16,8 @@ commands:
 EOF
 }
 
+# Sym-links the file "$1" from the repository to the home directory
+# $1: The file to install
 function install_file {
     local file=$1
     if [ ! -e ~/.$file ]; then
@@ -24,6 +28,10 @@ function install_file {
     fi
 }
 
+# Removes the file "$1" from the home directory
+# $1: The file to remove
+# $2: Pass the value "1" to forcefully remove the file even if it is not a
+# symlink
 function uninstall_file {
     local file=$1
     if [ -e ~/.$file ]; then
@@ -38,12 +46,14 @@ function uninstall_file {
     fi
 }
 
+# Install all the dotfiles
 function install_dotfiles {
     for file in ${files[*]}; do
         install_file $file
     done
 
     # additional git scripts
+    # download if unobtainable locally
     if [ ! -e ~/.git-prompt.sh ]; then
         if [ -e /usr/lib/git-core/git-sh-prompt ]; then
             ln -s /usr/lib/git-core/git-sh-prompt ~/.git-prompt.sh
@@ -70,6 +80,7 @@ function install_dotfiles {
     printf "\e[32m%s\e[0m\n" "Installation complete!"
 }
 
+# Remove all of the dotfiles
 function uninstall_dotfiles {
     for file in ${files[*]}; do
         uninstall_file $file
