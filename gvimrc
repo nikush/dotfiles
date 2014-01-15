@@ -9,6 +9,9 @@ set guioptions-=T   " remove toolbar
 set guioptions-=L   " remove left hand scrollbar
 set guioptions-=r   " remove right hand scrollbar
 
+" Plugins
+let g:gitgutter_enabled = 1
+
 " Local config
 if filereadable($HOME . "/.gvimrc.local")
     source ~/.gvimrc.local

@@ -68,6 +68,8 @@ endif
 " Get to ex commands quicker
 nnoremap ; :
 nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 " Arrow keys are for the weak!
 inoremap <UP> <NOP>
@@ -152,11 +154,6 @@ endfunc
 
 " Plugins
 let g:gitgutter_enabled = 0
-
-let g:syntastic_check_on_open=1
-let g:syntastic_mode_map = { 'mode': 'passive',
-                            \ 'active_filetypes': [],
-                            \ 'passive_filetypes': [] }
 
 nnoremap <leader>- :Switch<cr>
 let g:switch_custom_definitions =
