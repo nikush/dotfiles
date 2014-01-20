@@ -52,3 +52,6 @@
 [submodule "vim/bundle/twig"]
 	path = vim/bundle/twig
 	url = https://github.com/evidens/vim-twig
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+	url = git@github.com:bling/vim-airline.git
