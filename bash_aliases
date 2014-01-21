@@ -5,4 +5,4 @@ alias ln='ln -v'
 alias lh='ls -Alh'
 
 # Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+[[ -f ~/.bash_aliases.local ]] && source ~/.bash_aliases.local

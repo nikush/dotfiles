@@ -3,7 +3,7 @@
 # dotfiles install/uninstall script
 
 # list of files to work with
-files=(bashrc aliases gitconfig vimrc vim gvimrc)
+files=(bashrc bash_aliases gitconfig vimrc vim gvimrc)
 format_file_bold="\e[1m%s\e[0m %s\n"
 
 function help {
@@ -11,8 +11,8 @@ function help {
 dotfiles install/uninstall script
 
 commands:
-    install     Install the dotfiles
-    uninstall   Uninstall the dotfiles
+    up      Install the dotfiles
+    down    Uninstall the dotfiles
 EOF
 }
 
@@ -102,10 +102,10 @@ if [ $# -eq 0 ]; then
 fi
 
 case $1 in
-    install)
+    up)
         install_dotfiles
         ;;
-    uninstall)
+    down)
         uninstall_dotfiles
         ;;
     *)
