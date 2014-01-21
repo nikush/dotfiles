@@ -51,7 +51,7 @@
 	url = https://github.com/evidens/vim-twig
 [submodule "vim/bundle/airline"]
 	path = vim/bundle/airline
-	url = git@github.com:bling/vim-airline.git
+	url = git://github.com/bling/vim-airline.git
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
-	url = git@github.com:tpope/vim-abolish.git
+	url = git://github.com/tpope/vim-abolish.git
