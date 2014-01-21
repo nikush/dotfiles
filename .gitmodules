@@ -40,9 +40,6 @@
 [submodule "vim/bundle/gitgutter"]
 	path = vim/bundle/gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/vim-abolish"]
-	path = vim/bundle/vim-abolish
-	url = git://github.com/tpope/vim-abolish.git
 [submodule "vim/bundle/badwolf"]
 	path = vim/bundle/badwolf
 	url = git://github.com/sjl/badwolf.git
@@ -55,3 +52,6 @@
 [submodule "vim/bundle/airline"]
 	path = vim/bundle/airline
 	url = git@github.com:bling/vim-airline.git
+[submodule "vim/bundle/abolish"]
+	path = vim/bundle/abolish
+	url = git@github.com:tpope/vim-abolish.git
