@@ -4,6 +4,9 @@ colorscheme badwolf
 " Fonts
 set guifont=Ubuntu\ Mono\ 12
 
+set cursorline
+set colorcolumn=+1
+
 " Hide various gui elements
 set guioptions-=T   " remove toolbar
 set guioptions-=L   " remove left hand scrollbar
