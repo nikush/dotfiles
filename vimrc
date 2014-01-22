@@ -75,6 +75,12 @@ noremap <DOWN> <NOP>
 noremap <LEFT> <NOP>
 noremap <RIGHT> <NOP>
 
+" Repeat last macro
+nnoremap <Space> @@
+" Remap Q from Ex mode to repeat q macro
+" Allows me to quickly record a macro into the q register and start executing it
+nnoremap Q @q
+
 " dragvisuals
 vmap <expr> <LEFT> DVB_Drag('left')
 vmap <expr> <RIGHT> DVB_Drag('right')
