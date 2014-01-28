@@ -12,6 +12,9 @@ set guioptions-=T   " remove toolbar
 set guioptions-=L   " remove left hand scrollbar
 set guioptions-=r   " remove right hand scrollbar
 
+" Disable use of the mouse
+set mouse-=a
+
 " Plugins
 let g:gitgutter_enabled = 1
 
