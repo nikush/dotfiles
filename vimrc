@@ -41,6 +41,7 @@ set autoread
 set hidden
 
 set incsearch
+set ignorecase
 set smartcase
 set cpoptions+=$
 set showmatch
