@@ -18,9 +18,6 @@ set mouse-=a
 " Spell check highlighting is too obtrusive in terminal vim
 set spell
 
-" Plugins
-let g:gitgutter_enabled = 1
-
 " Local config
 if filereadable($HOME . "/.gvimrc.local")
     source ~/.gvimrc.local

@@ -93,6 +93,9 @@ vmap <expr> D DVB_Duplicate()
 " Plugins
 let g:gitgutter_enabled = 0
 
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
 nnoremap <leader>- :Switch<cr>
 let g:switch_custom_definitions =
             \ [
