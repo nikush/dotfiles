@@ -58,3 +58,6 @@
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/blade"]
+	path = vim/bundle/blade
+	url = https://github.com/xsbeats/vim-blade.git
