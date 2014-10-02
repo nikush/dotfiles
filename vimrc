@@ -61,6 +61,10 @@ if exists('+undofile')
     set undodir=~/.cache/vim/undo//
 endif
 
+" enable sourcing directory specific config files
+" http://writtenby.adriengiboire.com/articles/2014-09-30-projects-specific-settings-with-vim/
+set exrc
+
 " Get to ex commands quicker
 nnoremap ; :
 nnoremap : ;
