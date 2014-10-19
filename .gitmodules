@@ -61,3 +61,6 @@
 [submodule "vim/bundle/blade"]
 	path = vim/bundle/blade
 	url = https://github.com/xsbeats/vim-blade.git
+[submodule "vim/bundle/vinegar"]
+	path = vim/bundle/vinegar
+	url = https://github.com/tpope/vim-vinegar.git
