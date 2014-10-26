@@ -4,6 +4,9 @@
 export EDITOR="vim"
 export VISUAL="vim"
 
+# make vendor bin easier to get to
+export PATH=vendor/bin:$PATH
+
 
 # Prompt Configuration
 
