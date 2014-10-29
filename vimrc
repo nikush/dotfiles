@@ -47,7 +47,6 @@ set cpoptions+=$
 set showmatch
 
 set foldenable
-set foldcolumn=1
 
 set scrolloff=3
 
