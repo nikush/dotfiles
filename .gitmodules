@@ -64,3 +64,6 @@
 [submodule "vim/bundle/vinegar"]
 	path = vim/bundle/vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "vim/bundle/color-apprentice"]
+	path = vim/bundle/color-apprentice
+	url = https://github.com/romainl/Apprentice.git
