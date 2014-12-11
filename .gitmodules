@@ -67,3 +67,6 @@
 [submodule "vim/bundle/color-apprentice"]
 	path = vim/bundle/color-apprentice
 	url = https://github.com/romainl/Apprentice.git
+[submodule "vim/bundle/conoline"]
+	path = vim/bundle/conoline
+	url = https://github.com/miyakogi/conoline.vim.git
