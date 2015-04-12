@@ -1,7 +1,36 @@
-runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
 set nocompatible
+
+" Vundle stuff
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'AndrewRadev/switch.vim'
+Plugin 'bling/vim-airline'
+Plugin 'evidens/vim-twig'
+Plugin 'godlygeek/tabular'
+Plugin 'kien/ctrlp.vim'
+Plugin 'miyakogi/conoline.vim'
+Plugin 'nelstrom/vim-markdown-folding'
+Plugin 'romainl/Apprentice'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'sjl/badwolf'
+Plugin 'tmhedberg/matchit'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-vinegar'
+Plugin 'xsbeats/vim-blade'
+call vundle#end()
+
 filetype plugin indent on
 
 let mapleader=","

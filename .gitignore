@@ -1,2 +1,2 @@
-vim/bundle/*/doc/tags*
+vim/bundle/**
 vim/.netrwhist
