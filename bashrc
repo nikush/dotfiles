@@ -7,6 +7,10 @@ export VISUAL="vim"
 # make vendor bin easier to get to
 export PATH=vendor/bin:$PATH
 
+# set readline to use vi mappings instead of emacs
+# http://www.slideshare.net/pkrumins/bash-cheat-sheet-vi-editing-mode-cheat-sheet-presentation
+set -o vi
+
 
 # Prompt Configuration
 
