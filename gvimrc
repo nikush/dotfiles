@@ -1,11 +1,9 @@
 " Use an awesome colorscheme that supports hex values
+set t_Co=256
 colorscheme badwolf
 
 " Fonts
 set guifont=Ubuntu\ Mono\ 12
-
-set cursorline
-set colorcolumn=+1
 
 " Hide various gui elements
 set guioptions-=T   " remove toolbar
@@ -14,9 +12,6 @@ set guioptions-=r   " remove right hand scrollbar
 
 " Disable use of the mouse
 set mouse-=a
-
-" Spell check highlighting is too obtrusive in terminal vim
-set spell
 
 " Local config
 if filereadable($HOME . "/.gvimrc.local")

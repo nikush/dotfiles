@@ -65,6 +65,10 @@ set formatoptions=cqrn
 set showbreak=…
 set list
 set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
+set spell
+
+set cursorline
+set colorcolumn=+1
 
 set autoread
 set hidden
@@ -120,6 +124,9 @@ let g:gitgutter_enabled = 0
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+let g:conoline_use_colorscheme_default_normal=1
+let g:conoline_use_colorscheme_default_insert=1
 
 nnoremap <leader>- :Switch<cr>
 let g:switch_custom_definitions =
