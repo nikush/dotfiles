@@ -115,13 +115,6 @@ nnoremap <Space> @@
 " Allows me to quickly record a macro into the q register and start executing it
 nnoremap Q @q
 
-" dragvisuals
-vmap <expr> <LEFT> DVB_Drag('left')
-vmap <expr> <RIGHT> DVB_Drag('right')
-vmap <expr> <DOWN> DVB_Drag('down')
-vmap <expr> <UP> DVB_Drag('up')
-vmap <expr> D DVB_Duplicate()
-
 " Plugins
 let g:gitgutter_enabled = 0
 
