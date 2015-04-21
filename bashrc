@@ -32,5 +32,8 @@ GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=true
 PROMPT_COMMAND='__git_ps1 "[\W]" " $vim_prompt "'
 
+# aliases
+source ~/.dotfiles/bash_aliases
+
 # Local config
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
