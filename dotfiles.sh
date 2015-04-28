@@ -71,9 +71,6 @@ function install_dotfiles {
         printf "$format_file_bold" ".git-completion.sh" "already present. Skipped."
     fi
 
-    echo "Initialising vim plugin submodules"
-    git submodule update --init
-
     # create vim cache
     mkdir -p ~/.cache/vim/{swap,backup,undo}
 
