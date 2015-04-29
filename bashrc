@@ -15,11 +15,10 @@ set -o vi
 # Prompt Configuration
 
 # display a 'v' at the end of the prompt if in a vim subshell
-env_vim=`env | grep vim`;
-if [[ "$env_vim" == *MYVIMRC* ]]; then
-    vim_prompt="v";
+if [ -n "$MYVIMRC" ]; then
+    prompt_end="v";
 else
-    vim_prompt="$";
+    prompt_end="$";
 fi
 
 # git scripts
@@ -30,7 +29,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=true
-PROMPT_COMMAND='__git_ps1 "[\W]" " $vim_prompt "'
+PROMPT_COMMAND='__git_ps1 "[\W]" " $prompt_end "'
 
 # aliases
 source ~/.dotfiles/bash_aliases
