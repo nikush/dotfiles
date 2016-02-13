@@ -1,9 +1,11 @@
-set nocompatible
+" --- Plugins ---
 
 " Vundle stuff
+set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'gmarik/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
@@ -31,7 +33,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'xsbeats/vim-blade'
+
 call vundle#end()
+
+
+
+" -- General Settings ---
 
 filetype plugin indent on
 
@@ -99,6 +106,10 @@ endif
 " http://writtenby.adriengiboire.com/articles/2014-09-30-projects-specific-settings-with-vim/
 set exrc
 
+
+
+" --- Mappings ---
+
 " Get to ex commands quicker
 nnoremap ; :
 nnoremap : ;
@@ -121,7 +132,10 @@ nnoremap <Space> @@
 " Allows me to quickly record a macro into the q register and start executing it
 nnoremap Q @q
 
-" Plugins
+
+
+" --- Plugin Settings ---
+
 let g:gitgutter_enabled = 0
 
 let g:syntastic_check_on_open = 0
@@ -151,7 +165,20 @@ let g:switch_custom_definitions =
             \   ['private', 'protected', 'public']
             \ ]
 
-" Local config
+
+
+" --- Auto-Commands ---
+
+" Automatically source the Vimrc file on save.
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost .vimrc,vimrc source $MYVIMRC
+    autocmd BufWritePost .gvimrc,gvimrc source $MYGVIMRC
+augroup END
+
+
+
+" --- Local Configs ---
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
 endif
