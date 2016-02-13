@@ -7,38 +7,41 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
+
+" colors
+Plugin 'sjl/badwolf'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'bling/vim-airline'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'evidens/vim-twig'
-Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
-Plugin 'miyakogi/conoline.vim'
-Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'romainl/Apprentice'
+
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'scrooloose/syntastic'
-Plugin 'sjl/badwolf'
+Plugin 'xsbeats/vim-blade'
+Plugin 'evidens/vim-twig'
 Plugin 'tmhedberg/matchit'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-eunuch'
+
+" tpope
+Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vinegar'
-Plugin 'xsbeats/vim-blade'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
 
 call vundle#end()
 
 
 
-" -- General Settings ---
+" --- General Settings ---
 
 filetype plugin indent on
 
@@ -141,9 +144,6 @@ let g:gitgutter_enabled = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-let g:conoline_use_colorscheme_default_normal=1
-let g:conoline_use_colorscheme_default_insert=1
-
 let g:airline_section_z="%l:%c⋅%p%%"
 let g:airline_mode_map = {
   \ '__' : '-',
@@ -159,12 +159,6 @@ let g:airline_mode_map = {
   \ '' : 'S',
   \ }
 
-nnoremap <leader>- :Switch<cr>
-let g:switch_custom_definitions =
-            \ [
-            \   ['private', 'protected', 'public']
-            \ ]
-
 
 
 " --- Auto-Commands ---
@@ -179,6 +173,7 @@ augroup END
 
 
 " --- Local Configs ---
+
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
 endif
