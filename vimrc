@@ -15,6 +15,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'godlygeek/tabular'
