@@ -30,9 +30,9 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-eunuch' "useful for :Remove and :SudoWrite commands
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-abolish' "useful for coercing names from snake case to camel case
 Plugin 'tpope/vim-repeat'
 
 call vundle#end()
@@ -40,7 +40,6 @@ call vundle#end()
 
 
 " --- General Settings ---
-
 filetype plugin indent on
 
 let mapleader=","
@@ -50,51 +49,50 @@ syntax on
 set background=dark
 set t_Co=16
 
-if exists('+relativenumber')
-    set relativenumber
-else
-    set number
-endif
+" line numbers and cursor line
+set relativenumber
+set cursorline
 
+" status bar
 set showcmd
 set laststatus=2
 set wildmode=full
 set wildmenu
 
+" indenting
 set smartindent
 set autoindent
 
+" tabs
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" text formatting
 set textwidth=80
+set colorcolumn=+1
 set wrap
 set formatoptions=cqrn
 set showbreak=…
 set list
 set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
-set spell
+set cpoptions+=$ "show $ at the end of the text with something like a C command
 
-set cursorline
-set colorcolumn=+1
-
-set autoread
-set hidden
-
+" searching
 set incsearch
 set ignorecase
 set smartcase
-set cpoptions+=$
-set showmatch
 
-set foldenable
-
-set scrolloff=3
-
+" spelling
+set spell
 set spelllang=en_gb
 
+" buffers
+set autoread "update buffer if changed outside of vim
+set hidden "allows switching of buffers if they haven't been saved
+
+" backups
 set directory=~/.cache/vim/swap//
 set backup
 set backupdir=~/.cache/vim/backup//
@@ -103,6 +101,10 @@ if exists('+undofile')
     set undodir=~/.cache/vim/undo//
 endif
 
+" misc
+set showmatch "show matching brackets when inserted
+set foldenable
+set scrolloff=3
 " enable sourcing directory specific config files
 " http://writtenby.adriengiboire.com/articles/2014-09-30-projects-specific-settings-with-vim/
 set exrc
