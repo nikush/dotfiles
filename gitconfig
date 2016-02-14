@@ -1,5 +1,3 @@
-# vim: ft=gitconfig
-
 [color]
     ui = true
 [core]
@@ -25,3 +23,5 @@
 
 # aliases (http://code.joejag.com/2013/everyday-git-aliases/)
 # durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+
+# vim: ft=gitconfig
