@@ -4,6 +4,7 @@ colorscheme badwolf
 
 " Fonts
 set guifont=Ubuntu\ Mono\ 12
+set linespace=5
 
 " Hide various gui elements
 set guioptions-=T   " remove toolbar
