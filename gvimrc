@@ -1,20 +1,18 @@
-" Use an awesome colorscheme that supports hex values
+" colours
 set t_Co=256
 colorscheme badwolf
 
-" Fonts
+" typography
 set guifont=Ubuntu\ Mono\ 12
 set linespace=5
 
-" Hide various gui elements
-set guioptions-=T   " remove toolbar
-set guioptions-=L   " remove left hand scrollbar
-set guioptions-=r   " remove right hand scrollbar
+" tweak gui
+set guioptions-=T "remove toolbar
+set guioptions-=L "remove left hand scrollbar
+set guioptions-=r "remove right hand scrollbar
+set mouse-=a " disable use of the mouse
 
-" Disable use of the mouse
-set mouse-=a
-
-" Local config
+" local config
 if filereadable($HOME . "/.gvimrc.local")
     source ~/.gvimrc.local
 endif

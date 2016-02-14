@@ -1,5 +1,3 @@
-# vim: ft=sh
-
 # make vim my default editor for everything.
 export EDITOR="vim"
 export VISUAL="vim"
@@ -31,5 +29,7 @@ PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 # aliases
 source ~/.dotfiles/bash_aliases
 
-# Local config
+# local config
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
+
+# vim: ft=sh

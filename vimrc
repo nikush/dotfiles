@@ -8,7 +8,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-" colors
+" colours
 Plugin 'sjl/badwolf'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -40,6 +40,7 @@ call vundle#end()
 
 
 " --- General Settings ---
+
 filetype plugin indent on
 
 let mapleader=","
