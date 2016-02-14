@@ -12,7 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'sjl/badwolf'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'romainl/Apprentice'
 
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
@@ -23,7 +22,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'scrooloose/syntastic'
 Plugin 'xsbeats/vim-blade'
-Plugin 'evidens/vim-twig'
 Plugin 'tmhedberg/matchit'
 
 " tpope
@@ -31,11 +29,10 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-speeddating'
 
 call vundle#end()
 
@@ -113,13 +110,13 @@ set exrc
 
 " --- Mappings ---
 
-" Get to ex commands quicker
+" get to ex commands quicker
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-" Arrow keys are for the weak!
+" arrow keys are for the weak!
 inoremap <UP> <NOP>
 inoremap <DOWN> <NOP>
 inoremap <LEFT> <NOP>
@@ -129,17 +126,15 @@ noremap <DOWN> <NOP>
 noremap <LEFT> <NOP>
 noremap <RIGHT> <NOP>
 
-" Repeat last macro
+" repeat last macro
 nnoremap <Space> @@
-" Remap Q from Ex mode to repeat q macro
-" Allows me to quickly record a macro into the q register and start executing it
+" remap Q from Ex mode to repeat q macro
+" allows me to quickly record a macro into the q register and start executing it
 nnoremap Q @q
 
 
 
 " --- Plugin Settings ---
-
-let g:gitgutter_enabled = 0
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
@@ -163,7 +158,7 @@ let g:airline_mode_map = {
 
 " --- Auto-Commands ---
 
-" Automatically source the Vimrc file on save.
+" automatically source the Vimrc file on save
 augroup autosourcing
     autocmd!
     autocmd BufWritePost .vimrc,vimrc source $MYVIMRC
