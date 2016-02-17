@@ -114,6 +114,9 @@ set exrc
 
 " --- Mappings ---
 
+" quickly edit vimrc
+nnoremap <Leader>ev :tabedit $MYVIMRC<cr>
+
 " get to ex commands quicker
 nnoremap ; :
 nnoremap : ;
