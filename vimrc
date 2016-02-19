@@ -24,6 +24,8 @@ Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'scrooloose/syntastic'
 Plugin 'xsbeats/vim-blade'
 Plugin 'tmhedberg/matchit'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " tpope
 Plugin 'tpope/vim-vinegar'
