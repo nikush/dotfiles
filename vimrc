@@ -1,4 +1,4 @@
-" --- Plugins ---
+" --------------------------------- Plugins ------------------------------------
 
 " Vundle stuff
 set nocompatible
@@ -41,7 +41,7 @@ call vundle#end()
 
 
 
-" --- General Settings ---
+" ----------------------------- General Settings -------------------------------
 
 filetype plugin indent on
 
@@ -114,7 +114,7 @@ set exrc
 
 
 
-" --- Mappings ---
+" --------------------------------- Mappings -----------------------------------
 
 " quickly edit vimrc
 nnoremap <Leader>ev :tabedit $MYVIMRC<cr>
@@ -143,7 +143,7 @@ nnoremap Q @q
 
 
 
-" --- Plugin Settings ---
+" ----------------------------- Plugin Settings --------------------------------
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
@@ -165,7 +165,7 @@ let g:airline_mode_map = {
 
 
 
-" --- Auto-Commands ---
+" ------------------------------ Auto-Commands ---------------------------------
 
 " automatically source the Vimrc file on save
 augroup autosourcing
@@ -176,7 +176,7 @@ augroup END
 
 
 
-" --- Local Configs ---
+" ------------------------------ Local Configs ---------------------------------
 
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
