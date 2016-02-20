@@ -3,7 +3,8 @@ set t_Co=256
 colorscheme badwolf
 
 " typography
-set guifont=Ubuntu\ Mono:h16
+set guifont=Ubuntu\ Mono\ 12
+"set guifont=Ubuntu\ Mono:h12 " MacVim
 set linespace=5
 
 " tweak gui
