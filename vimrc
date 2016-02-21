@@ -81,6 +81,7 @@ set showbreak=…
 set list
 set listchars=tab:▸\ ,eol:¬,trail:-,extends:>,precedes:<,nbsp:+
 set cpoptions+=$ "show $ at the end of the text with something like a C command
+set backspace=indent,eol,start
 
 " searching
 set incsearch
