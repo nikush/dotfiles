@@ -10,6 +10,7 @@
     co = checkout
     ds = diff --staged
     sb = status -sb
+    l = log --oneline --decorate --all --graph
     lg = log --pretty=format:'%Cred%h %Creset%s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     la = "!git config -l | grep alias | cut -c 7-"
     amend = commit --amend -C HEAD
