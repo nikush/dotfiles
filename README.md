@@ -3,12 +3,11 @@ nikush's dotfiles
 
 Install
 -------
-Run `dotfiles.sh install` to install all config files into to the home
-directory using symlinks.
+Run `dotfiles.sh up` to install all config files into to the home directory using symlinks.
 
 Uninstall
 ---------
-Run `dotfiles.sh uninstall` to remove all of the symlinks.
+Run `dotfiles.sh down` to remove all of the symlinks.
 
 Local Settings
 --------------
