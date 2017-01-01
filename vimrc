@@ -19,13 +19,14 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown' "must come after tabular
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'scrooloose/syntastic'
 Plugin 'xsbeats/vim-blade'
 Plugin 'tmhedberg/matchit'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'lumiliet/vim-twig'
 
 " tpope
 Plugin 'tpope/vim-vinegar'
@@ -33,7 +34,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-eunuch' "useful for :Remove and :SudoWrite commands
-Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-abolish' "useful for coercing names from snake case to camel case
 Plugin 'tpope/vim-repeat'
 
@@ -163,6 +163,10 @@ let g:airline_mode_map = {
   \ 'S'  : 'S',
   \ '' : 'S',
   \ }
+
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
 
 
 
