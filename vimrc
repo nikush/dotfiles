@@ -27,6 +27,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'lumiliet/vim-twig'
+Plugin 'mattn/emmet-vim'
 
 " tpope
 Plugin 'tpope/vim-vinegar'
