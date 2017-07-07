@@ -3,7 +3,7 @@
 # dotfiles install/uninstall script
 
 # list of files to work with
-FILES=(bashrc bash_aliases gitconfig vimrc vim gvimrc)
+FILES=(bashrc bash_aliases gitconfig vimrc vim gvimrc tmux.conf)
 FORMAT_FILE_BOLD="\e[1m%s\e[0m %s\n"
 
 function help {
