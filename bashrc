@@ -9,16 +9,15 @@ export PATH=vendor/bin:$PATH
 # Prompt Configuration
 
 # git scripts
-. ~/.git-completion.sh
-. ~/.git-prompt.sh
+source ~/.git-completion.sh
+source ~/.git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=true
 
-prompt_end()
-{
+prompt_end() {
     # display a 'v' at the end of the prompt if in a vim subshell
     if [ -n "$MYVIMRC" ]; then
         echo "v"
