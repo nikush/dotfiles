@@ -52,6 +52,7 @@ let maplocalleader="\\"
 syntax on
 set background=dark
 set t_Co=256
+colorscheme badwolf
 
 " line numbers and cursor line
 set relativenumber
