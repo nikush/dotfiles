@@ -9,12 +9,7 @@
     st = status
     co = checkout
     ds = diff --staged
-    sb = status -sb
-    l = log --oneline --decorate --all --graph
-    lg = log --pretty=format:'%Cred%h %Creset%s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     la = "!git config -l | grep alias | cut -c 7-"
-    amend = commit --amend -C HEAD
-    undo = reset --soft HEAD^
     standup = log --since='yesterday' --oneline --author=nikush.patel7@gmail.com
     graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(red) %an%Creset, %ar'
 [push]
