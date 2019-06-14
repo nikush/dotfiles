@@ -44,7 +44,8 @@ function install_file {
 
 function download_git_scripts {
     local prompt_url=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-    local completion_url=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    local completion_bash=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    local completion_zsh=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 
     # additional git scripts
     # download if unobtainable locally
@@ -59,11 +60,14 @@ function download_git_scripts {
         printf "$FORMAT_FILE_BOLD" ".git-prompt.sh" "already present. Skipped."
     fi
 
-    if [ ! -e ~/.git-completion.sh ]; then
-        download $completion_url ~/.git-completion.sh
-        printf "$FORMAT_FILE_BOLD" ".git-completion.sh" "installed."
+    if [ ! -e ~/.git-completion.bash ]; then
+        download $completion_bash ~/.git-completion.bash
+        download $completion_zsh ~/.git-completion.zsh
+        printf "$FORMAT_FILE_BOLD" ".git-completion.bash" "installed."
+        printf "$FORMAT_FILE_BOLD" ".git-completion.zsh" "installed."
     else
-        printf "$FORMAT_FILE_BOLD" ".git-completion.sh" "already present. Skipped."
+        printf "$FORMAT_FILE_BOLD" ".git-completion.bash" "already present. Skipped."
+        printf "$FORMAT_FILE_BOLD" ".git-completion.zsh" "already present. Skipped."
     fi
 }
 # download a file
@@ -87,7 +91,8 @@ function uninstall_dotfiles {
     done
 
     # additional git scripts
-    uninstall_file git-completion.sh 1
+    uninstall_file git-completion.bash 1
+    uninstall_file git-completion.zsh 1
     uninstall_file git-prompt.sh 1
 
     # remove vim cache
