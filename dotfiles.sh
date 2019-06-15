@@ -37,9 +37,9 @@ function install_file {
     local file=$1
     if [ ! -e ~/.$file ]; then
         ln -s ~/.dotfiles/$file ~/.$file
-        printf "$FORMAT_FILE_BOLD" ".$file" "installed."
+        printf "\e[32m+%s\e[0m %s\n" ".$file" "[installed]"
     else
-        printf "$FORMAT_FILE_BOLD" ".$file" "already present. Skipped."
+        printf "\e[31m!%s\e[0m %s\n" ".$file" "[skipped: already present]"
     fi
 }
 
@@ -66,12 +66,12 @@ function uninstall_file {
     if [ -e ~/.$file ]; then
         if [ -L ~/.$file ] || [ "$2" -eq "1" ]; then
             rm ~/.$file
-            printf "$FORMAT_FILE_BOLD" ".$file" "uninstalled."
+            printf "\e[32m-%s\e[0m %s\n" ".$file" "[uninstalled]"
         else
-            printf "$FORMAT_FILE_BOLD" ".$file" "is not a symlink. Skipped."
+            printf "\e[31m!%s\e[0m %s\n" ".$file" "[skipped: not a symlink]"
         fi
     else
-        printf "$FORMAT_FILE_BOLD" ".$file" "doesn't exist. Skipped."
+        printf "\e[31m~%s\e[0m %s\n" ".$file" "[skipped: not found]"
     fi
 }
 
