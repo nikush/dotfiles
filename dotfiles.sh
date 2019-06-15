@@ -3,31 +3,32 @@
 # dotfiles install/uninstall script
 
 # list of files to work with
-FILES=(bashrc bash_aliases gitconfig vimrc vim gvimrc tmux.conf zshrc)
-FORMAT_FILE_BOLD="\e[1m%s\e[0m %s\n"
+FILES=(bashrc bash_aliases gitconfig vimrc vim gvimrc tmux.conf)
+FORMAT_FILE_BOLD="\e[1m%s\e[0m => %s\n"
+FORMAT_GREEN="\e[32m%s\e[0m\n"
 
 function help {
     cat << EOF
 dotfiles install/uninstall script
 
 commands:
-    up      Install the dotfiles
-    down    Uninstall the dotfiles
+    up|install        Install the dotfiles
+    down|uninstall    Uninstall the dotfiles
 EOF
 }
 
 # Install all the dotfiles
 function install_dotfiles {
+    printf "$FORMAT_GREEN" "Installing dotfiles..."
+
     for file in ${FILES[*]}; do
         install_file $file
     done
 
-    download_git_scripts
-
     # create vim cache
     mkdir -p ~/.cache/vim/{swap,backup,undo}
 
-    printf "\e[32m%s\e[0m\n" "Installation complete!"
+    printf "$FORMAT_GREEN" "Done!"
 }
 
 # Sym-links the file "$1" from the repository to the home directory
@@ -42,63 +43,18 @@ function install_file {
     fi
 }
 
-function download_git_scripts {
-    local prompt_url=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-    local completion_bash=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-    local completion_zsh=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
-
-    # additional git scripts
-    # download if unobtainable locally
-    if [ ! -e ~/.git-prompt.sh ]; then
-        if [ -e /usr/lib/git-core/git-sh-prompt ]; then
-            ln -s /usr/lib/git-core/git-sh-prompt ~/.git-prompt.sh
-        else
-            download $prompt_url ~/.git-prompt.sh
-        fi
-        printf "$FORMAT_FILE_BOLD" ".git-prompt.sh" "installed."
-    else
-        printf "$FORMAT_FILE_BOLD" ".git-prompt.sh" "already present. Skipped."
-    fi
-
-    if [ ! -e ~/.git-completion.bash ]; then
-        download $completion_bash ~/.git-completion.bash
-        download $completion_zsh ~/.git-completion.zsh
-        printf "$FORMAT_FILE_BOLD" ".git-completion.bash" "installed."
-        printf "$FORMAT_FILE_BOLD" ".git-completion.zsh" "installed."
-    else
-        printf "$FORMAT_FILE_BOLD" ".git-completion.bash" "already present. Skipped."
-        printf "$FORMAT_FILE_BOLD" ".git-completion.zsh" "already present. Skipped."
-    fi
-}
-# download a file
-# $1: The source URL to download
-# $2: The target location to download to
-function download {
-    local sauce=$1
-    local target=$2
-
-    if type curl >> /dev/null; then
-        curl --silent $sauce --output $target
-    else
-        wget -q $sauce -O $target
-    fi
-}
-
 # Remove all of the dotfiles
 function uninstall_dotfiles {
+    printf "$FORMAT_GREEN" "Uninstalling dotefiles..."
+
     for file in ${FILES[*]}; do
         uninstall_file $file 0
     done
 
-    # additional git scripts
-    uninstall_file git-completion.bash 1
-    uninstall_file git-completion.zsh 1
-    uninstall_file git-prompt.sh 1
-
     # remove vim cache
     rm -rf ~/.cache/vim
 
-    printf "\e[32m%s\e[0m\n" "Uninstallation complete!"
+    printf "$FORMAT_GREEN" "Done!"
 }
 
 # Removes the file "$1" from the home directory
@@ -121,10 +77,10 @@ function uninstall_file {
 
 
 case $1 in
-    up)
+    up|install)
         install_dotfiles
         ;;
-    down)
+    down|uninstall)
         uninstall_dotfiles
         ;;
     *)
