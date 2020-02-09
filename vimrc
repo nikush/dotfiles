@@ -18,16 +18,11 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown' "must come after tabular
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-Plugin 'xsbeats/vim-blade'
 Plugin 'tmhedberg/matchit'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'lumiliet/vim-twig'
-Plugin 'mattn/emmet-vim'
 
 " tpope
 Plugin 'tpope/vim-vinegar'
