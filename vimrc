@@ -10,23 +10,14 @@ Plugin 'gmarik/Vundle.vim'
 
 " colours
 Plugin 'sjl/badwolf'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'NLKNguyen/papercolor-theme'
 
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'plasticboy/vim-markdown' "must come after tabular
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'tmhedberg/matchit'
-Plugin 'lumiliet/vim-twig'
 
 " tpope
 Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-eunuch' "useful for :Remove and :SudoWrite commands
