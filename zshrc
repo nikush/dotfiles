@@ -2,23 +2,17 @@
 setopt histignoredups
 
 # git autocompletion
-fpath=(~/.zsh $fpath)
-zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
+#fpath=(~/.zsh $fpath)
+#zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 autoload -Uz compinit && compinit
-
-# kubectl
-export KUBECONFIG=~/.kube/config
 
 # direnv
 eval "$(direnv hook zsh)"
 
-export PATH=$HOME/.vc/bin:$PATH
+# aws-cli
+export PATH=$HOME/.local/bin:$PATH
 
-# nvim
-export NVM_DIR="$HOME/.nvm"
-export NVM_SYMLINK_CURRENT=true
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=$HOME/.vc/bin:$PATH
 
 # starship prompt
 eval "$(starship init zsh)"
