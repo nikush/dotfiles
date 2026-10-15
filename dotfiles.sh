@@ -4,6 +4,10 @@
 
 # list of files to work with
 FILES=(bashrc bash_aliases gitconfig vimrc vim gvimrc tmux.conf zshrc zprofile zshenv)
+
+# absolute path to this repository, wherever it is cloned
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 FORMAT_FILE_BOLD="\e[1m%s\e[0m => %s\n"
 FORMAT_GREEN="\e[32m%s\e[0m\n"
 
@@ -36,7 +40,7 @@ function install_dotfiles {
 function install_file {
     local file=$1
     if [ ! -e ~/.$file ]; then
-        ln -s ~/.dotfiles/$file ~/.$file
+        ln -s "$DOTFILES_DIR/$file" ~/.$file
         printf "\e[32m+%s\e[0m %s\n" ".$file" "[installed]"
     else
         printf "\e[31m!%s\e[0m %s\n" ".$file" "[skipped: already present]"
